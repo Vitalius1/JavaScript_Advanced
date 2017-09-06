@@ -1,0 +1,22 @@
+<html>
+    <head>  
+        <style>
+            #hoverme{
+                width: 100px;
+                height: 100px;
+                background: red;
+            }
+        </style>
+        <script type="text/javascript" src="myLibrary.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                $Dojo("button").click(function(){ console.log("You clicked ME") });
+                $Dojo("hoverme").hover(function(){ console.log("you hover over me") }, function(){ console.log("you hovered out") });
+            })
+        </script>
+    </head>
+    <body>
+        <button id="button">Click me</button>
+        <div id="hoverme"></div>
+    </body>
+</html>
