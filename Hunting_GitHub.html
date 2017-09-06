@@ -4,14 +4,16 @@
         <script>
             $(document).ready(function(){
                 var button = document.getElementById("mybutton");
-                button.addEventListener("click", displayName);
-                function displayName(){
-                    $.get("https://api.github.com/users/Vitalius1", consoleName)
-                    function consoleName(data){
+                button.addEventListener("click", getName);
+                
+                function getName(){
+                    $.get("https://api.github.com/users/Vitalius1").then(function(data){
                         let result = document.createElement("h1");
                         result.innerHTML = data.name;
                         document.getElementById("name").appendChild(result);
-                    };
+                    }).catch(function(err){
+                        console.log(err.responseJSON.message);
+                    });
                 };
             });
 
