@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            function fib() {
+                var previous = 0;
+                var current = 1;
+                var next = 0;
+                function nacci() {
+                    console.log(current);
+                    next = current + previous;
+                    previous = current;
+                    current = next;
+                }
+                return nacci
+              }
+              var fibCounter = fib();
+              fibCounter() // should console.log "1"
+              fibCounter() // should console.log "1"
+              fibCounter() // should console.log "2"
+              fibCounter() // should console.log "3"
+              fibCounter() // should console.log "5"
+              fibCounter() // should console.log "8"
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
