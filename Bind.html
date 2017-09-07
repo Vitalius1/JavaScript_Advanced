@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>            
+        <script>
+            $(document).ready(function(){
+                // our test object
+                var customObject = {
+                    name:'California, Eureka',
+                    onClick:function(){
+                        console.log("I've been clicked");
+                        console.log(this.name);
+                    }
+                }
+                // our behavior on click.
+                // $('button').click(customObject.onClick);
+                // $('button').click(customObject.onClick.bind(customObject));
+                
+                
+                // var newObject = {
+                //     name:"West Virginia,  Montani semper liberi"
+                // }
+                // our test object
+                var newObject = {
+                    name:'Diana and Vitalie',
+                    onClick:function(){
+                        console.log("I've been clicked by Vitalie");
+                        console.log("I've been passed by bind");
+                        console.log(this.name);
+                    }
+                }
+                
+                
+                // our behavior on click.
+                // $('button').click(customObject.onClick.bind(customObject,"Bind this argument!"));
+                
+                // modify the button method to this:
+                console.log(customObject)
+                console.log(newObject)
+                console.log(customObject.onClick.bind(newObject))
+                $('button').click(newObject.onClick.bind(customObject));
+                console.log(customObject.onClick)
+
+            });
+        </script>
+    </head>
+    <body>
+        <button name='button'>Click Me</button> 
+    </body>
+</html>
