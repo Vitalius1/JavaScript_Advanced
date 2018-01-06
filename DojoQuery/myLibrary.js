@@ -1,16 +1,18 @@
-(function(){
-    function $Dojo(id){
-        this.elem = document.getElementById(id);
-        
-        this.click = function(callback){
-            this.elem.addEventListener("click", callback);
-        }
-        
-        this.hover = function(hoverin, hoverout){
-            this.elem.addEventListener("mouseover", hoverin);
-            this.elem.addEventListener("mouseout", hoverout);
-        }
-        return this;
+(function $Dojo(id) {
+    let elem = document.getElementById(id);
+
+    let click = function (callback) {
+        elem.addEventListener("click", callback);
     }
+
+    let hover = function (hoverin, hoverout) {
+        elem.addEventListener("mouseover", hoverin);
+        elem.addEventListener("mouseout", hoverout);
+    }
+    
     window.$Dojo = $Dojo;
+    return {
+        click: click,
+        hover: hover
+    };
 }());
